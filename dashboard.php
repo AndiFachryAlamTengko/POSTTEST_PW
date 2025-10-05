@@ -7,7 +7,7 @@ if (!isset($_SESSION['username'])) {
   exit;
 }
 
-// Tangkap query string jika ada (menggunakan $_GET)
+// Ambil query string dari URL menggunakan $_GET
 $asal = $_GET['asal'] ?? '';
 $tujuan = $_GET['tujuan'] ?? '';
 $tanggal = $_GET['tanggal'] ?? '';
@@ -28,13 +28,14 @@ $tanggal = $_GET['tanggal'] ?? '';
   </header>
 
   <section>
-    <h2>Hasil Pencarian (via $_GET)</h2>
+    <h2>Hasil Pencarian (Data dari URL)</h2>
     <?php if ($asal && $tujuan && $tanggal): ?>
       <p><b>Asal:</b> <?= htmlspecialchars($asal) ?></p>
       <p><b>Tujuan:</b> <?= htmlspecialchars($tujuan) ?></p>
       <p><b>Tanggal:</b> <?= htmlspecialchars($tanggal) ?></p>
+      <p><i>Maskapai Garuda Indonesia - Rp 1.500.000</i></p>
     <?php else: ?>
-      <p>Belum ada data pencarian dikirim melalui URL.</p>
+      <p>Tidak ada data pencarian dikirim melalui URL.</p>
     <?php endif; ?>
   </section>
 

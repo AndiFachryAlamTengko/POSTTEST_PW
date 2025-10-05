@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
 
-  // Autentikasi sederhana (username dan password statis)
+  // Autentikasi sederhana
   if ($username === "admin" && $password === "12345") {
     $_SESSION["username"] = $username;
     header("Location: dashboard.php");
